@@ -2,7 +2,7 @@
 
 $host = "localhost"; 
 $user = "root"; //db account name
-$password = "DBAdmin";
+$password = "";
 $dbname = "work_Out_Wizard";
 
 $con = new mysqli ($host, $user, $password, $dbname)
