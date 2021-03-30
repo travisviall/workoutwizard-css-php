@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Workout Wizard</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="WorkoutWizard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="WorkoutWizard/css/modern-business.css" rel="stylesheet">
+        <style>
+            #home{
+                /*background-color: black;*/
+                margin-top: 50px;
+                text-align: center;
+            }
+
+            .labelColor{
+                /*color: white;*/
+            }
+
+            .error{
+                color: red;
+                text-transform: capitalize;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" id="title" href="index.html">WORKOUT WIZARD</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="createaccount.html">Create Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">LOGIN</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script>
+          function validateForm() {
+            var fName = document.forms["myForm"]["firstName"].value;
+            var lName = document.forms["myForm"]["lastName"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var pass1 = document.forms["myForm"]["password"].value;
+            var pass2 = document.forms["myForm"]["password2"].value;
+            var heightF = document.forms["myForm"]["heightFeet"].value;
+            var heightI = document.forms["myForm"]["heightInches"].value;
+            var weight = document.forms["myForm"]["weight"].value;
+            //var age = document.forms["myForm"]["age"].value;
+            if (fName == "" || fName == null) {
+              alert("Please enter a first name");
+              return false;
+            }
+            if (lName == "" || lName == null){
+              alert("please enter a last name");
+              return false;
+            }
+            if (pass1 == "" || pass1 == null){
+              alert("please enter a password");
+              return false;
+            }
+            if (pass2 == "" || pass2 == null){
+              alert("please comfirm password");
+              return false;
+            }
+            if (email == "" || email == null){
+              alert("Please enter a valid email");
+              return false;
+            }
+            if (pass1 != pass2){
+              alert("passwords do not match");
+              return false;
+            }
+            // var expression1 = /^[a-zA-Z]+$/;
+            // var expression2 = /^[0-9]+$/;
+            //     if (!expression1.test(fname) || !expression1.test(lname)){
+            //         alert("You can only use characters a-z and A-Z in your name")
+            //         return false;
+            //     }
+            //      if (!expression2.test(age) || !expression2.test(heightF) || !expression2.test(heightI) || !expression2.test(weight)){
+            //        alert("Please use only numbers for age, height and weight");
+            //        return false;
+            //     }
+          }
+          </script>
+            <div>
+                 <!-- if(email == null || email == "" || !string.includes(email, @) ){
+                   alert("Please provide a valid email adress");
+                   return false; -->
+
+            </div>
+        </header>
+        <!-- Page Content -->
+        <div class="container">
+
+            <!--login goes here-->
+            <div class='jumbotron' id="home">
+                <h4 class="display-4" id="title">Create Account</h4>
+                <hr class="my-4">
+                <div class="col-md-10 mx-auto">
+                    <!--in form tag, action = URL of php file-->
+                    <form name="myForm" action="createaccountresults.php" onsubmit="return validateForm();" method="post">
+                        <div class='form-group row justify-content-center'>
+                            <div class='col-sm-6'>
+                                <label class="labelColor" id="firstLabel">First Name:</label>
+                                <input type='text' class='form-control' id='firstName' name="firstName"  required>
+                                <div class="invalid-feedback">Please provide a first name</div>
+                            </div>
+
+
+                            <div class='col-sm-6'>
+                                <label class="labelColor" id="lastLabel"> Last Name:</label>
+                                <input type='text' class='form-control' id='lastName' name="lastName" required>
+                            </div>
+                        </div>
+                        <div class='form-group row justify-content-center'>
+                            <div class='col-sm-6'>
+                                <label class="labelColor">Password:</label>
+                                <input type='text' class='form-control' id='password' name="password" >
+                            </div>
+                            <div class='col-sm-6'>
+                                <label class="labelColor">eMail Address:</label>
+                                <input type='text' class='form-control' id='email' name="email" >
+                            </div>
+
+                                 <div class='col-sm-6'>
+                                <label class="labelColor">Username:</label>
+                                <input type='text' class='form-control' id='userName' name="userName" >
+                            </div>
+                                <div class='col-sm-6'>
+                                <label class="labelColor">Confirm Password:</label>
+                                <input type='text' class='form-control' id='password2' name="password2" >
+                            </div>
+
+
+
+                        </div>
+                        <div class='form-group row justify-content-center'>
+                            <div class='col-sm-3'>
+                                <label class="labelColor">Height (feet)*:</label>
+                                <input type='text' class='form-control' id='heightFeet' name="heightFeet">
+                            </div>
+                            <div class='col-sm-3'>
+                                <label class="labelColor">Height (inches)*:</label>
+                                <input type='text' class='form-control' id='heightInches' name="heightInches" >
+                            </div>
+                            <div class='col-sm-3'>
+                                <label class="labelColor">Weight*:</label>
+                                <input type='text' class='form-control' id='weight' name="weight" >
+                            </div>
+                            <div class='col-sm-3'>
+                                <label class="labelColor">Date of Birth*:</label>
+                                <input type='date' class='form-control' id='DOB' name="DOB" >
+                            </div>
+
+                        </div>
+                        <label class='labelColor'>*optional fields</label>
+                        <div class='form-group row justify-content-center'>
+                            <div class='col-lg-6'>
+                                <button type='submit' class='btn btn-primary px-3' onclick="return(validateForm());">Create Account</button>
+                                <!--onclick="return(validate())-->
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="WorkoutWizard/vendor/jquery/jquery.min.js"></script>
+        <script src="WorkoutWizard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>
